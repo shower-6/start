@@ -1,0 +1,19 @@
+/*
+  这个程序有待完善
+*/
+#include<stdio.h>
+int main(void)
+{
+	char i[100];            //存放字符
+	int m=0;	              //用于定位字符和控制循环
+  fgets(i,99,stdin);     // gets(i);这可能导致溢出
+	while(m<=100) 
+	  {
+		  i[m]=i[m]+1;
+		  printf("%c",i[m]);
+		  m++;
+		  if(i[m]==0||i[m]=='\n')   //剔除空字符和fgets所读取的回车
+			  break;
+	  }
+	return 0;
+}
